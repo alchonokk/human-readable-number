@@ -44,18 +44,31 @@ module.exports = function toReadable (number) {
     if (number>10 && number<=20 ){
         return unit2[number.toString()[1]];
     }
+
     if (number > 20 && number < 100){
     	if (number.toString()[1] == "0"){
     		return unit3[number.toString()[0]];
     	} else {
-    		return unit3[number.toString()[0]] + " " + unit1[num.toString()[1]];
+    		return unit3[number.toString()[0]] + " " + unit1[number.toString()[1]];
     	}
     }
-    
 
-
-
+    if (number >99 && number<1000){
+        if (number.toString()[1] == "0" && number.toString()[2] == "0")
+    		return unit1[number.toString()[0]] + " hundred";
+    	if (number.toString()[1] == "0")
+            return unit1[number.toString()[0]] + " hundred " + unit1[number.toString()[2]];
+        if (num.toString()[1] == "1" && number.toString()[2] == 0) 
+            return unit1[number.toString()[0]] + " hundred ten";
+        if (num.toString()[1] == "1") 
+            return unit1[number.toString()[0]] + " hundred " + unit2[number.toString()[2]]
+    	if (num.toString()[2] == "0")
+    		return unit1[number.toString()[0]] + " hundred " + unit3[number.toString()[1]];
+    	else 
+    		return unit1[number.toString()[0]] + " hundred " + unit3[number.toString()[1]] + " " + unit1[number.toString()[2]];
     }
+    }
+
 
 
 
