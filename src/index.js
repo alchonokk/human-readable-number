@@ -12,12 +12,53 @@ module.exports = function toReadable (number) {
         9: 'nine',
         10: 'ten'
     }
+
+    let unit2 = {
+        1: 'eleven',
+        2: 'twelve',
+        3: 'thirteen',
+        4: 'fourteen',
+        5: 'fifteen',
+        6: 'sixteen',
+        7: 'seventeen',
+        8: 'eighteen',
+        9: 'nineteen',
+        0: 'twenty',
+    }
+
+    let unit3= {
+        1: 'ten',
+    	2: 'twenty',
+        3: 'thirty',
+        4: 'forty',
+        5: 'fifty',
+        6: 'sixty',
+        7: 'seventy',
+        8: 'eighty',
+        9: 'ninety',
+    }
+    if (number>=0 && number<=10 ){
+        return unit1[number];
+    }
+
+    if (number>10 && number<=20 ){
+        return unit2[number.toString()[1]];
+    }
+    if (number > 20 && number < 100){
+    	if (number.toString()[1] == "0"){
+    		return unit3[number.toString()[0]];
+    	} else {
+    		return unit3[number.toString()[0]] + " " + unit1[num.toString()[1]];
+    	}
+    }
     
 
 
 
-
-        
-
     }
-}
+
+
+
+
+
+   
