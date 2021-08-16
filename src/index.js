@@ -58,11 +58,11 @@ module.exports = function toReadable (number) {
     		return unit1[number.toString()[0]] + " hundred";
     	if (number.toString()[1] == "0")
             return unit1[number.toString()[0]] + " hundred " + unit1[number.toString()[2]];
-        if (num.toString()[1] == "1" && number.toString()[2] == 0) 
+        if (number.toString()[1] == "1" && number.toString()[2] == 0) 
             return unit1[number.toString()[0]] + " hundred ten";
-        if (num.toString()[1] == "1") 
+        if (number.toString()[1] == "1") 
             return unit1[number.toString()[0]] + " hundred " + unit2[number.toString()[2]]
-    	if (num.toString()[2] == "0")
+    	if (number.toString()[2] == "0")
     		return unit1[number.toString()[0]] + " hundred " + unit3[number.toString()[1]];
     	else 
     		return unit1[number.toString()[0]] + " hundred " + unit3[number.toString()[1]] + " " + unit1[number.toString()[2]];
